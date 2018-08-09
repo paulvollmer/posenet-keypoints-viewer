@@ -19,7 +19,7 @@ function render() {
   ctx.fillStyle = '#ccc';
   ctx.fillRect(0, 0, 500, 500);
   // draw the pose
-  drawPose(ctx, data.keypoints)
+  drawPose(ctx, data.keypoints);
 }
 
 window.onload = function() {

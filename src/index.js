@@ -47,7 +47,8 @@ export function drawSkeleton(ctx, keypoints, color, scale = 1) {
 /**
  * Draw the Keypoints and Skeleton
  */
-export function drawPose(ctx, keypoints, colorPoints = 'red', colorSkeleton = '#3f51b5', scale = 1) {
+export function drawPose(ctx, keypoints,
+  colorPoints = 'red', colorSkeleton = '#3f51b5', scale = 1) {
   drawSkeleton(ctx, keypoints, colorSkeleton, scale);
   drawKeypoints(ctx, keypoints, colorPoints, scale);
 }
