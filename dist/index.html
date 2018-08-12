@@ -1,143 +1,289 @@
-<!DOCTYPE html><html> <head> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>PoseNet - Keypoints Viewer</title> <style type="text/css">.mdl-layout{background:#333;color:red}.mdl-layout__header-row{background:#000}textarea{background-color:#000;color:#fff;border:0 solid;width:100%}#btn-render{width:100%;min-width:0;margin-bottom:.5em}</style> <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"> <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> </head> <body> <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"> <header class="mdl-layout__header"> <div class="mdl-layout__header-row"> <span class="mdl-layout-title">PoseNet Keypoints Viewer</span> <div class="mdl-layout-spacer"></div> <nav class="mdl-navigation mdl-layout--large-screen-only"> <a class="mdl-navigation__link" href="https://github.com/paulvollmer/posenet-keypoints-viewer">GitHub</a> </nav> </div> </header> <main class="mdl-layout__content"> <div class="page-content"> <div class="mdl-grid"> <div class="mdl-cell mdl-cell--6-col"> <canvas id="visualize" width="500" height="500"> </canvas></div> <div class="mdl-cell mdl-cell--6-col"> <div> <button id="btn-render" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Render</button> </div> <textarea id="data" rows="142" cols="80">
-{
-  "score": 0.8161482565543231,
-  "keypoints": [
-    {
-      "score": 0.26003745198249817,
-      "part": "nose",
-      "position": {
-        "x": 219.9169692993164,
-        "y": 130.58108058312126
+<!DOCTYPE html><html> <head> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>PoseNet - Keypoints Viewer</title> <style type="text/css">.mdl-layout{background:#333;color:#fff}.mdl-layout__header-row{background:#000}textarea{background-color:#000;border:0 solid;color:#fff;width:100%}#message{color:red}#btn-render{width:100%;min-width:0;margin-bottom:.5em}</style> <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"> <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> </head> <body> <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"> <header class="mdl-layout__header"> <div class="mdl-layout__header-row"> <span class="mdl-layout-title">PoseNet Keypoints Viewer</span> <div class="mdl-layout-spacer"></div> <nav class="mdl-navigation mdl-layout--large-screen-only"> <a class="mdl-navigation__link" href="https://github.com/paulvollmer/posenet-keypoints-viewer">GitHub</a> </nav> </div> </header> <main class="mdl-layout__content"> <div class="page-content"> <div class="mdl-grid"> <div class="mdl-cell mdl-cell--12-col" id="message"></div> <div class="mdl-cell mdl-cell--6-col" id="visualize">  </div> <div class="mdl-cell mdl-cell--6-col"> <div> <button id="btn-render" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">Render</button> </div> <textarea id="data" rows="142" cols="80">
+[
+
+  {
+    "score": 0.8161482565543231,
+    "keypoints": [
+      {
+        "score": 0.26003745198249817,
+        "part": "nose",
+        "position": {
+          "x": 219.9169692993164,
+          "y": 130.58108058312126
+        }
+      },
+      {
+        "score": 0.20206424593925476,
+        "part": "leftEye",
+        "position": {
+          "x": 204.8534706400638,
+          "y": 124.11212003082655
+        }
+      },
+      {
+        "score": 0.29297351837158203,
+        "part": "rightEye",
+        "position": {
+          "x": 223.98092404440726,
+          "y": 122.89389664899264
+        }
+      },
+      {
+        "score": 0.7435782551765442,
+        "part": "leftEar",
+        "position": {
+          "x": 199.86225128173828,
+          "y": 127.41397262509928
+        }
+      },
+      {
+        "score": 0.6267251968383789,
+        "part": "rightEar",
+        "position": {
+          "x": 232.49832137491694,
+          "y": 129.90334608149232
+        }
+      },
+      {
+        "score": 0.9906819462776184,
+        "part": "leftShoulder",
+        "position": {
+          "x": 183.53439093625397,
+          "y": 164.98534719380106
+        }
+      },
+      {
+        "score": 0.994364857673645,
+        "part": "rightShoulder",
+        "position": {
+          "x": 257.3104815977738,
+          "y": 164.0986667490599
+        }
+      },
+      {
+        "score": 0.9768376350402832,
+        "part": "leftElbow",
+        "position": {
+          "x": 167.26566102593767,
+          "y": 229.03288161408358
+        }
+      },
+      {
+        "score": 0.9469670653343201,
+        "part": "rightElbow",
+        "position": {
+          "x": 278.68058789518363,
+          "y": 237.69507624202743
+        }
+      },
+      {
+        "score": 0.9823463559150696,
+        "part": "leftWrist",
+        "position": {
+          "x": 148.6785828206549,
+          "y": 284.46042959126197
+        }
+      },
+      {
+        "score": 0.9709405899047852,
+        "part": "rightWrist",
+        "position": {
+          "x": 277.5433217282117,
+          "y": 265.2476666082485
+        }
+      },
+      {
+        "score": 0.988792359828949,
+        "part": "leftHip",
+        "position": {
+          "x": 200.1002833576123,
+          "y": 278.201275710743
+        }
+      },
+      {
+        "score": 0.9870211482048035,
+        "part": "rightHip",
+        "position": {
+          "x": 248.5015246126167,
+          "y": 276.1884698511654
+        }
+      },
+      {
+        "score": 0.9940420985221863,
+        "part": "leftKnee",
+        "position": {
+          "x": 203.70181568826382,
+          "y": 370.7057339996718
+        }
+      },
+      {
+        "score": 0.9870300889015198,
+        "part": "rightKnee",
+        "position": {
+          "x": 249.02960600793608,
+          "y": 366.9959609795408
+        }
+      },
+      {
+        "score": 0.9534767270088196,
+        "part": "leftAnkle",
+        "position": {
+          "x": 209.0226941247204,
+          "y": 452.7651687558756
+        }
+      },
+      {
+        "score": 0.9766408205032349,
+        "part": "rightAnkle",
+        "position": {
+          "x": 245.35150130655757,
+          "y": 449.7262444080653
+        }
       }
-    },
-    {
-      "score": 0.20206424593925476,
-      "part": "leftEye",
-      "position": {
-        "x": 204.8534706400638,
-        "y": 124.11212003082655
+    ]
+  },
+
+  {
+    "score": 0.8161482565543231,
+    "keypoints": [
+      {
+        "score": 0.26003745198249817,
+        "part": "nose",
+        "position": {
+          "x": 219.9169692993164,
+          "y": 130.58108058312126
+        }
+      },
+      {
+        "score": 0.20206424593925476,
+        "part": "leftEye",
+        "position": {
+          "x": 204.8534706400638,
+          "y": 124.11212003082655
+        }
+      },
+      {
+        "score": 0.29297351837158203,
+        "part": "rightEye",
+        "position": {
+          "x": 223.98092404440726,
+          "y": 122.89389664899264
+        }
+      },
+      {
+        "score": 0.7435782551765442,
+        "part": "leftEar",
+        "position": {
+          "x": 199.86225128173828,
+          "y": 127.41397262509928
+        }
+      },
+      {
+        "score": 0.6267251968383789,
+        "part": "rightEar",
+        "position": {
+          "x": 232.49832137491694,
+          "y": 129.90334608149232
+        }
+      },
+      {
+        "score": 0.9906819462776184,
+        "part": "leftShoulder",
+        "position": {
+          "x": 183.53439093625397,
+          "y": 164.98534719380106
+        }
+      },
+      {
+        "score": 0.994364857673645,
+        "part": "rightShoulder",
+        "position": {
+          "x": 257.3104815977738,
+          "y": 164.0986667490599
+        }
+      },
+      {
+        "score": 0.9768376350402832,
+        "part": "leftElbow",
+        "position": {
+          "x": 127.26566102593767,
+          "y": 159.03288161408358
+        }
+      },
+      {
+        "score": 0.9469670653343201,
+        "part": "rightElbow",
+        "position": {
+          "x": 278.68058789518363,
+          "y": 237.69507624202743
+        }
+      },
+      {
+        "score": 0.9823463559150696,
+        "part": "leftWrist",
+        "position": {
+          "x": 58.6785828206549,
+          "y": 184.46042959126197
+        }
+      },
+      {
+        "score": 0.9709405899047852,
+        "part": "rightWrist",
+        "position": {
+          "x": 277.5433217282117,
+          "y": 265.2476666082485
+        }
+      },
+      {
+        "score": 0.988792359828949,
+        "part": "leftHip",
+        "position": {
+          "x": 200.1002833576123,
+          "y": 278.201275710743
+        }
+      },
+      {
+        "score": 0.9870211482048035,
+        "part": "rightHip",
+        "position": {
+          "x": 248.5015246126167,
+          "y": 276.1884698511654
+        }
+      },
+      {
+        "score": 0.9940420985221863,
+        "part": "leftKnee",
+        "position": {
+          "x": 203.70181568826382,
+          "y": 370.7057339996718
+        }
+      },
+      {
+        "score": 0.9870300889015198,
+        "part": "rightKnee",
+        "position": {
+          "x": 249.02960600793608,
+          "y": 366.9959609795408
+        }
+      },
+      {
+        "score": 0.9534767270088196,
+        "part": "leftAnkle",
+        "position": {
+          "x": 209.0226941247204,
+          "y": 452.7651687558756
+        }
+      },
+      {
+        "score": 0.9766408205032349,
+        "part": "rightAnkle",
+        "position": {
+          "x": 245.35150130655757,
+          "y": 449.7262444080653
+        }
       }
-    },
-    {
-      "score": 0.29297351837158203,
-      "part": "rightEye",
-      "position": {
-        "x": 223.98092404440726,
-        "y": 122.89389664899264
-      }
-    },
-    {
-      "score": 0.7435782551765442,
-      "part": "leftEar",
-      "position": {
-        "x": 199.86225128173828,
-        "y": 127.41397262509928
-      }
-    },
-    {
-      "score": 0.6267251968383789,
-      "part": "rightEar",
-      "position": {
-        "x": 232.49832137491694,
-        "y": 129.90334608149232
-      }
-    },
-    {
-      "score": 0.9906819462776184,
-      "part": "leftShoulder",
-      "position": {
-        "x": 183.53439093625397,
-        "y": 164.98534719380106
-      }
-    },
-    {
-      "score": 0.994364857673645,
-      "part": "rightShoulder",
-      "position": {
-        "x": 257.3104815977738,
-        "y": 164.0986667490599
-      }
-    },
-    {
-      "score": 0.9768376350402832,
-      "part": "leftElbow",
-      "position": {
-        "x": 167.26566102593767,
-        "y": 229.03288161408358
-      }
-    },
-    {
-      "score": 0.9469670653343201,
-      "part": "rightElbow",
-      "position": {
-        "x": 278.68058789518363,
-        "y": 237.69507624202743
-      }
-    },
-    {
-      "score": 0.9823463559150696,
-      "part": "leftWrist",
-      "position": {
-        "x": 148.6785828206549,
-        "y": 284.46042959126197
-      }
-    },
-    {
-      "score": 0.9709405899047852,
-      "part": "rightWrist",
-      "position": {
-        "x": 277.5433217282117,
-        "y": 265.2476666082485
-      }
-    },
-    {
-      "score": 0.988792359828949,
-      "part": "leftHip",
-      "position": {
-        "x": 200.1002833576123,
-        "y": 278.201275710743
-      }
-    },
-    {
-      "score": 0.9870211482048035,
-      "part": "rightHip",
-      "position": {
-        "x": 248.5015246126167,
-        "y": 276.1884698511654
-      }
-    },
-    {
-      "score": 0.9940420985221863,
-      "part": "leftKnee",
-      "position": {
-        "x": 203.70181568826382,
-        "y": 370.7057339996718
-      }
-    },
-    {
-      "score": 0.9870300889015198,
-      "part": "rightKnee",
-      "position": {
-        "x": 249.02960600793608,
-        "y": 366.9959609795408
-      }
-    },
-    {
-      "score": 0.9534767270088196,
-      "part": "leftAnkle",
-      "position": {
-        "x": 209.0226941247204,
-        "y": 452.7651687558756
-      }
-    },
-    {
-      "score": 0.9766408205032349,
-      "part": "rightAnkle",
-      "position": {
-        "x": 245.35150130655757,
-        "y": 449.7262444080653
-      }
-    }
-  ]
-}
+    ]
+  }
+
+]
               </textarea> </div> </div> </div> </main> </div> <script src="e7edb3339683befaaf3645294f9c51e8.js"></script> </body> </html>
