@@ -12,10 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@"
+    "url": "git@github.com/paulvollmer/posenet-keypoints-viewer.git"
   },
   "keywords": [
-    "posenet"
+    "posenet",
+    "keypoints",
+    "viewer"
   ],
   "author": "paulvollmer",
   "license": "Apache-2.0",
@@ -26,10 +28,6 @@
   },
   "eslintConfig": {
     "extends": "google",
-    "rules": {
-      "require-jsdoc": 0,
-      "valid-jsdoc": 0
-    },
     "env": {
       "es6": true
     },
